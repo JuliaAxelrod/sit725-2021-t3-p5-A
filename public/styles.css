@@ -2,25 +2,42 @@
   width: 200px;
 }
 
-.title{
-  color: white;
+.title {
+  color: rgb(10, 101, 124);
 }
-.mainText{
-  color:white;
+.mainText {
+  color: white;
 }
 
 body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-  background-color: #B783C3;
-
+  background-color: #caf0f3;
 }
 
-.page-footer{
-  background-color: #9E65A9;
+.page-footer {
+  background-color: #22dbfc;
 }
 main {
   flex: 1 0 auto;
 }
-    
+.nav-wrapper {
+  background-color: #58e3fb;
+}
+
+.brand-logo img {
+  height: 40px;
+}
+
+.brand-logo,
+.right {
+  height: 100%;
+}
+.brand-logo {
+  height: 100%;
+}
+
+.right {
+  height: 100%;
+}
