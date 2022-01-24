@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Alex's Boiler Plate</title>
+    <title>Project Pitch - Log Antarctica Adventure</title>
 
     <!-- Compiled and minified CSS -->
     <!-- Materialze-->
@@ -20,43 +20,58 @@
 <body>
     <header>
         <nav>
-            <div class="nav-wrapper" style=" background-color: #9E65A9;">
-                <a href="#" class="brand-logo" style="height: 100%;">
-                    <img src="assets/ale.jpg" alt="" class="circle responsive-img"
+            <div class="nav-wrapper">
+                <a href="#">
+                    <img src="assets/LoneIceberg_7292.JPG" alt="" class="circle responsive-img"
                         style="height: 100%;padding-top: 5px; padding-left: 15px;"> <!-- notice the "circle" class -->
 
                 </a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="https://www.linkedin.com/in/alessiobonti">Linkedin</a></li>
+                    <li><a href="https://www.linkedin.com/learning/me/collections?u=2104084">Linkedin</a></li>
                 </ul>
             </div>
         </nav>
+        <nav>
+            <div class="nav-wrapper">
+              <a href="#" class="brand-logo right" style="height: 100%;"><img src="assets/Iceberg_7292.JPG" class= "circle responsive-img" ></a>
+             <!-- how to add class "brand-logo right" to styles.css?  -->
+              <ul id="nav-mobile" class="left hide-on-med-and-down">
+                <li><a href="#" data-target="slide-out" class="sidenav-trigger" style="display:block"><i class="material-icons">menu</i></a></li>
+                <li><a href="index.html">Antarctica Projects</a></li>
+                <li><a href="about.html">About Us</a></li>
+              </ul>
+            </div>
+          </nav>
+                
+        <ul id="slide-out" class="sidenav">    
+            <li><a>Projects</a></li>
+            <li><a>Settings</a></li>
+        </ul>
     </header>
     <main>
 
         <div class="container">
-            <h1 class="title">Alex NExUs</h1>
+            <a class="btn-floating btn-large waves-effect waves-light blue grey darken-1" style = "position: fixed; right: 10px; bottom: 10px"><i class="material-icons">add</i></a>
+            <h1 class="title">Log Your Antarctica Adventure</h1>
             <div class="row">
-                <p class="flow-text mainText">This is a basic boilerplate i have created based on Node Express and
-                    Materialize, I hope it will help you develop your next project!</p>
+                <p class="flow-text mainText" style="font-size: xx-small;">Using a basic boilerplate Alex Bonti have created based on Node Express and
+                    Materialize</p>
             </div>
-            <div class="row center" style="height: 150px;">
-                <img src="assets/ale2.jpg" alt="" class="circle responsive-img"
-                    style="height: 100%;padding-top: 5px; padding-left: 15px;"> <!-- notice the "circle" class -->
+       
+            <div id="projects-list" class="row">
+
             </div>
-            <div class="row center " style="padding-top:50px;">
-                <a id="testButton" class="waves-effect waves-light btn-large " style="background-color: #9E65A9;"><i
-                        class="material-icons left" style="color:white font-size:larger">emoji_people</i>Click me!</a>
-            </div>
+       
+       
         </div>
 
     </main>
     <footer class="page-footer">
         <div class="footer-copyright">
             <div class="container">
-                © 2020 Copyright AlexNexus
-                <a class="grey-text text-lighten-4 right" href="https://github.com/alexbonti/node-material"><img
-                        src="assets/git-logo.svg" style="height: 20px; padding-right: 15px;"></i>Boiler plate here !</a>
+                © 2022 Copyright Viva Antarctica!
+                <a class="grey-text text-lighten-4 right" href="https://github.com/JuliaAxelrod/sit725-2021-t3-p3-AB2.git"><img
+                        src="assets/git-logo.svg" style="height: 20px; padding-right: 15px;"></i>JuliaAxelrod gitHub</a>
             </div>
         </div>
     </footer>
@@ -67,7 +82,7 @@
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
