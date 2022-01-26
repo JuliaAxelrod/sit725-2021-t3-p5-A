@@ -49,9 +49,11 @@ for (let id = 1; id < 21; id++){
 }
 
 app.get("/projects", function (request, response){
-  response.json(projects);
+  // response.json(projects);
   // need to get the syntax right here:
-  // projects.filter(p=>p.projectDate <= Date.now() &&  p.projectDate > Date(1918));
+  console.log ("hello ", Date.now(), "Byebye", new Date(1985, 0, 0, 0, 0, 0));
+  response.json(projects.filter(p=>(p.projectDate <= Date.now() &&  p.projectDate > new Date(1985, 0, 0, 0, 0, 0))));
+ // response.json(projects.filter(p=>p.projectDate <= Date.now()));
 })
 
 http.listen(port,()=>{
