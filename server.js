@@ -50,7 +50,7 @@ for (let id = 1; id < 21; id++){
 
 app.get("/projects", function (request, response){
   // response.json(projects);
-  // Fised syntax - both filter queries work !!!
+  // Fixsed syntax - both filter queries work !!!
   console.log ("hello ", Date.now(), "Byebye", new Date(1985, 0, 0, 0, 0, 0));
   response.json(projects.filter(p=>(p.projectDate <= Date.now() &&  p.projectDate > new Date(1985, 0, 0, 0, 0, 0))));
  // response.json(projects.filter(p=>p.projectDate <= Date.now()));
