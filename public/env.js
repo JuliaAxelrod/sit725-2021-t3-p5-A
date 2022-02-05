@@ -12,7 +12,7 @@ socket.on('number', (msg) => {
 })
 
 function projectCard(project) {
-  return `    <div class="col s6 m4">
+  return `    <div class="col s6 m4 l3">
   <div class="card">
     <div class="card-image">
       <img src="${project.img ? project.img : 'assets/ale.jpg'}">

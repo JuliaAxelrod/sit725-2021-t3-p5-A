@@ -1,13 +1,15 @@
 {
   "name": "project-pitch",
-  "version": "0.0.01",
+  "version": "0.0.1",
   "dependencies": {
     "cf-deployment-tracker-client": "*",
     "commander": "^2.6.0",
     "express": "^4.14.1",
     "http-post": "^0.1.1",
     "http-proxy": "^1.8.1",
-    "socket.io": "^2.3.0"
+    "latest": "^0.2.0",
+    "snowpack": "^3.8.8",
+    "socket.io": "^2.4.1"
   },
   "main": "server.js",
   "scripts": {
@@ -16,9 +18,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/IBM-Bluemix/bluemix-hello-node.git"
+    "url": "git+https://github.com/IBM-Bluemix/bluemix-hello-node.git"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"
-  }
+  },
+  "description": "Hello by Alessio:",
+  "bugs": {
+    "url": "https://github.com/IBM-Bluemix/bluemix-hello-node/issues"
+  },
+  "homepage": "https://github.com/IBM-Bluemix/bluemix-hello-node#readme",
+  "directories": {
+    "test": "test"
+  },
+  "author": "Julia",
+  "license": "ISC"
 }
