@@ -41,3 +41,7 @@ main {
 .right {
   height: 100%;
 }
+
+#project-image {
+  font: cyan-text text-lighten-3;
+}
