@@ -17,6 +17,14 @@ if (fs.existsSync(path)) {
   console.log("DOES NOT exist:", path);
 }
 
+const pathErr = "./file.txt";
+
+fs.access(pathErr, fs.F_OK, (err) => {
+  if (err) {
+    console.error(err)
+    return
+  };
+});
 
 var port = process.env.PORT || 8080;
 
