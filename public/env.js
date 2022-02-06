@@ -15,7 +15,7 @@ function projectCard(project) {
   return `    <div class="col s6 m4 l3">
   <div class="card">
     <div class="card-image">
-      <img src="${project.img ? project.img : 'assets/ale.jpg'}">
+      <img src="${project.img ? project.img : 'assets/Iceberg_7292.jpg'}">
       <span class="card-title">${project.title} ${project.projectDate}</span>
     </div>
     <div class="card-content">
