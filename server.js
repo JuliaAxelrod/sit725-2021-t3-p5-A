@@ -5,7 +5,17 @@ let app = express();
 let http = require('http').createServer(app);
 let io = require('socket.io')(http);
 
+// Check for image - Path exists
+const fs = require("fs");
 
+const path = "public/index.html";
+
+if (fs.existsSync(path)) {
+  // path exists
+  console.log("exists:", path);
+} else {
+  console.log("DOES NOT exist:", path);
+}
 
 
 var port = process.env.PORT || 8080;
@@ -36,13 +46,17 @@ const projects = [];
 for (let id = 1; id < 21; id++){
 
   let projectDate = new Date(id*100000000000);
- 
+  let projectImage = "assets/" + id.toString() + ".jpg"
+  console.log ("projectImage", projectImage);
+
   projects.push({
     projectID: id,
     projectDate: projectDate,
     title: 'project ' + id,
     info: `This is the info the project number ${id} logged on the ...${projectDate.getFullYear()}   ${projectDate.getDay()}  ${projectDate.getMonth()}`,
-    img: "assets/" + id.toString() + ".jpg", 
+    // img: "assets/" + id.toString() + ".jpg", 
+    // img: null, 
+    img: fs.existsSync(projectImage) ? projectImage : "assets/Iceberg_7292.jpg",
   });
   console.log ("project Date ",  typeof(projectDate), projectDate.getFullYear(), ); 
 }
@@ -54,6 +68,7 @@ app.get("/projects", function (request, response){
   response.json(projects.filter(p=>(p.projectDate <= Date.now() &&  p.projectDate > new Date(1985, 0, 0, 0, 0, 0))));
  // response.json(projects.filter(p=>p.projectDate <= Date.now()));
 })
+
 
 http.listen(port,()=>{
   console.log("Listening on port ", port);
