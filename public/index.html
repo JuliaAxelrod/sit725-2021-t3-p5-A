@@ -19,7 +19,9 @@
 
 <body>
     <header>
+        
         <nav>
+            
             <div class="nav-wrapper">
                 <a href="#">
                     <img src="assets/LoneIceberg_7292.JPG" alt="" class="circle responsive-img"
@@ -51,20 +53,30 @@
     <main>
 
         <div class="container">
-            <a class="btn-floating btn-large waves-effect waves-light blue grey darken-1" style = "position: fixed; right: 10px; bottom: 10px"><i class="material-icons">add</i></a>
             <h1 class="title">Log Your Antarctica Adventure</h1>
             <div class="row">
                 <p class="flow-text mainText" style="font-size: xx-small;">Using a basic boilerplate Alex Bonti have created based on Node Express and
                     Materialize</p>
             </div>
-       
             <div id="projects-list" class="row">
 
             </div>
-       
-       
+
+            <a class="btn-floating btn-large waves-effect waves-light blue grey darken-1 modal-trigger" href="#create-project" 
+            style = "position: fixed; right: 10px; bottom: 10px"><i class="material-icons">add</i></a>
         </div>
 
+          <!-- Modal Structure -->
+  <div id="create-project" class="modal modal-fixed-footer">
+    <div class="modal-content">
+      <h4>Log your adventure</h4>
+      <p>A bunch of text</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-light indigo lighten-2 btn">Close</a>
+      <a href="#!" class="waves-effect waves-light cyan lighten-1 btn">Insert</a>
+    </div>
+  </div>
     </main>
     <footer class="page-footer">
         <div class="footer-copyright">

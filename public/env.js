@@ -33,6 +33,7 @@ console.log('test')
 $(document).ready(function(){
   console.log('Ready')
   $('.sidenav').sidenav();
+  $('.modal').modal();
 
   //bind the button
   // $('#testButton').click(testButtonFunction)
