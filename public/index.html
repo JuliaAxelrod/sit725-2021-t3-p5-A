@@ -67,10 +67,43 @@
         </div>
 
           <!-- Modal Structure -->
-  <div id="create-project" class="modal modal-fixed-footer">
+  <div id="create-project" class="modal modal-fixed-footer cyan-text text-darken-2">
     <div class="modal-content">
       <h4>Log your adventure</h4>
-      <p>A bunch of text</p>
+    <div class="row">
+        <form class="col s12">
+            <div class="row">
+                <div class="input-field col s12">
+                  <input id="project-id" type="number">
+                  <label for="project-id" class="indigo-text text-darken-1">Project ID:</label>
+                </div>
+              </div>
+            <div class="row">
+                <div class="input-field col s12">
+                  <input id="project-date" type="Date">
+                  <label for="project-date">Date:</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="project-title" type="text">
+                  <label for="project-title" class="cyan-text text-lighten-1">Title:</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="project-info" type="text">
+                  <label for="project-info" class="cyan-text text-lighten-3">Project Info and Location:</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="project-image" type="text">
+                  <label for="project-image" class="cyan-text text-lighten-3" >Project Image:</label>
+                </div>
+              </div>
+        </form>
+    </div>
     </div>
     <div class="modal-footer">
       <a href="#!" class="modal-close waves-effect waves-light indigo lighten-2 btn">Close</a>
