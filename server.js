@@ -29,6 +29,7 @@ fs.access(pathErr, fs.F_OK, (err) => {
 var port = process.env.PORT || 8080;
 
 app.use(express.static(__dirname + '/public'));
+app.use(express.json());
 
 console.log (process.env.name);
 app.get("/test", function (request, response) {
@@ -70,13 +71,24 @@ for (let id = 1; id < 21; id++){
 }
 
 app.get("/projects", function (request, response){
-  // response.json(projects);
+  response.json(projects);
   // Fixed syntax - both filter queries work !!!
-  console.log ("hello ", Date.now(), "Byebye", new Date(1985, 0, 0, 0, 0, 0));
-  response.json(projects.filter(p=>(p.projectDate <= Date.now() &&  p.projectDate > new Date(1985, 0, 0, 0, 0, 0))));
- // response.json(projects.filter(p=>p.projectDate <= Date.now()));
+//   console.log ("hello ", Date.now(), "Byebye", new Date(1985, 0, 0, 0, 0, 0));
+//   response.json(projects.filter(p=>(p.projectDate <= Date.now() &&  p.projectDate > new Date(1985, 0, 0, 0, 0, 0))));
+//  // response.json(projects.filter(p=>p.projectDate <= Date.now()));
 })
 
+
+// Send date as     "projectDate": "2015-03-12T13:37:27+00:00",
+app.post("/project", function(request, response){
+  // add proper validation
+  // if (!request.body) response.sendStatus (500)
+  // else {  projects.push(request.body);
+  //   response.status(204);}
+
+    projects.push(request.body);
+    response.status(204);
+});
 
 http.listen(port,()=>{
   console.log("Listening on port ", port);
