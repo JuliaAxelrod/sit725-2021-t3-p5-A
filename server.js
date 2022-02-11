@@ -4,6 +4,7 @@ let app = express();
 //var app = require('express')();
 let http = require('http').createServer(app);
 let io = require('socket.io')(http);
+let dbo = require('./db/conn');
 
 // Check for image - Path exists
 const fs = require("fs");
@@ -91,8 +92,16 @@ app.post("/project", function(request, response){
    response.sendStatus(200); // SEND THE RESPONSE!!!!!
 });
 
-http.listen(port,()=>{
-  console.log("Listening on port ", port);
+//Connect to DB, if error - terminate, nothing else to do.
+dbo.connect ((err) => {
+  if (err) {
+    console.error(err);
+    process.exit();
+  }
+  // If success - listen on port from env variables
+  http.listen(port,()=>{
+    console.log("Listening on port ", port);
+  });
 });
 
 //this is only needed for Cloud foundry 
