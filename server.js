@@ -71,26 +71,54 @@ for (let id = 1; id < 21; id++){
   console.log ("project Date ",  typeof(projectDate), projectDate.getFullYear(), ); 
 }
 
+
+app.get("/project", function (request, response) {
+  console.log(request.query.id);
+  dbo.getDB()
+      .collection("projects")
+      .find({projectID:request.query.id})
+      .toArray((err, res) => {
+          if (err) {
+              throw err;
+          }
+          response.send(res);
+      })
+});
+
+
 app.get("/projects", function (request, response){
-  response.json(projects);
+  dbo.getDB()
+    .collection ("projects")
+    .find({})
+    .toArray((err,res) => {
+      if (err){
+        throw err;
+      }
+      response.send(res);
+    })
+
+  // response.json(projects);
   // Fixed syntax - both filter queries work !!!
-//   console.log ("hello ", Date.now(), "Byebye", new Date(1985, 0, 0, 0, 0, 0));
-//   response.json(projects.filter(p=>(p.projectDate <= Date.now() &&  p.projectDate > new Date(1985, 0, 0, 0, 0, 0))));
-//  // response.json(projects.filter(p=>p.projectDate <= Date.now()));
-})
+  // console.log ("hello ", Date.now(), "Byebye", new Date(1985, 0, 0, 0, 0, 0));
+  // response.json(projects.filter(p=>(p.projectDate <= Date.now() &&  p.projectDate > new Date(1985, 0, 0, 0, 0, 0))));
+  //  // response.json(projects.filter(p=>p.projectDate <= Date.now()));
+});
 
 
 // Send date as     "projectDate": "2015-03-12T13:37:27+00:00",
 app.post("/project", function(request, response){
   // add proper validation
-  // if (!request.body) response.sendStatus (500)
-  // else {  projects.push(request.body);
-  //   response.status(204);}
-  console.log(request.body)
+  if (!request.body) 
+    response.sendStatus (500);
 
-    projects.push(request.body);
-   response.sendStatus(200); // SEND THE RESPONSE!!!!!
-});
+                                  // else {  projects.push(request.body);
+                                  //   response.sendStatus(204);}
+  dbo.getDB()
+      .collection("projects")
+      .insertOne(request.body); // projects.push(request.body);
+      console.log(request.body)
+      response.sendStatus(200);  // SEND THE RESPONSE!!!!!
+  });
 
 //Connect to DB, if error - terminate, nothing else to do.
 dbo.connect ((err) => {
