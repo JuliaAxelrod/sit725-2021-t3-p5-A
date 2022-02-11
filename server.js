@@ -85,9 +85,10 @@ app.post("/project", function(request, response){
   // if (!request.body) response.sendStatus (500)
   // else {  projects.push(request.body);
   //   response.status(204);}
+  console.log(request.body)
 
     projects.push(request.body);
-    response.status(204);
+   response.sendStatus(200); // SEND THE RESPONSE!!!!!
 });
 
 http.listen(port,()=>{

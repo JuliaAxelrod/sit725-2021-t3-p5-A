@@ -50,7 +50,7 @@ function createProject(){
   console.log('Cheers!!!');
   console.log(settings);
   $.ajax(settings).done(function (response) {
-debugger;
+      debugger;
     console.log('Cheers!!');
       $('#projects-list').append(projectCard(project));
 
