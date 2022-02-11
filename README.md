@@ -1,4 +1,24 @@
 Repeating Prac4 here
+Hello from Julia again.
+
+The issue with env.js not calling $.ajax which closed modal, zeroed out its values
+and reloaded webpage was in the server line 92
+
+app.post("/project", function(request, response){
+// add proper validation
+// if (!request.body) response.sendStatus (500)
+// else { projects.push(request.body);
+// response.status(204);}
+console.log(request.body)
+
+    projects.push(request.body);
+
+response.sendStatus(200); // SEND THE RESPONSE!!!!!
+});
+response.status(204); is not returning the value to the front end
+and hence nothing was happening. This is also why postman kept on "posting", but never showed the status.
+
+Now I installed mongoDB and will write the projects to the DB.
 
 Hello from Julia.
 
