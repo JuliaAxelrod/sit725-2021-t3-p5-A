@@ -24,6 +24,9 @@ Created mongoDB entries with file stored in the collection entries.
 If image file is too big, error message is "Payload is too big"
 Suspect limit is ~50Kb.
 
+https://docs.mongodb.com/manual/tutorial/query-documents/
+https://www.mongodb.com/developer/quickstart/cheat-sheet/#crud
+
 Hello from Julia.
 
 This is Prac 3 where I added date to the list of projects and
