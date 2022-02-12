@@ -28,43 +28,61 @@ function projectCard(project) {
 </div>`
 }
 
-function createProject(){ 
-  // debugger;
-  const project = {
-    "projectID": $('#project-id').val(), // 212,
-    "projectDate": $('#project-date').val(), // "2017-03-12T13:37:27+00:00",
-    "title": $('#project-title').val(), // "project 212",
-    "info": $('#project-info').val(), // "Cierva Cove, Antarctica ",
-    "img": $('#project-image').val() // null
-  };
-
-  var settings = {
-    "url": "/project",
-    "method": "POST",
-    "timeout": 0,
-    "headers": {
-      "Content-Type": "application/json"
-    },
-    "data": JSON.stringify(project),
-  };
-  console.log('Cheers!!!');
-  console.log(settings);
-  $.ajax(settings).done(function (response) {
-      debugger;
-    console.log('Cheers!!');
-      $('#projects-list').append(projectCard(project));
-
-      $('#project-id').val(''); 
-      $('#project-date').val(''); 
-      $('#project-title').val(''); 
-      $('#project-info').val(''); 
-      $('#project-image').val(''); 
-      $('.modal').modal('close');
-   
-
-      console.log(response);
-
+function getBase64(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => resolve(reader.result);
+    reader.onerror = error => reject(error);
   });
+}
+
+function createProject(){ 
+  let img = document.querySelector('#project-file').files[0];
+  if (img){
+    getBase64(img).then(
+      d => {
+        const project = {
+          "projectID": $('#project-id').val(), // 212,
+          "projectDate": $('#project-date').val(), // "2017-03-12T13:37:27+00:00",
+          "title": $('#project-title').val(), // "project 212",
+          "info": $('#project-info').val(), // "Cierva Cove, Antarctica ",
+          "img": d   // $('#project-image').val() // null
+        };
+      
+        var settings = {
+          "url": "/project",
+          "method": "POST",
+          "timeout": 0,
+          "headers": {
+            "Content-Type": "application/json"
+          },
+          "data": JSON.stringify(project),
+        };
+
+        console.log(settings);
+        $.ajax(settings).done(function (response) {
+            debugger;
+          console.log('Cheers!!');
+            $('#projects-list').append(projectCard(project));
+      
+            $('#project-id').val(''); 
+            $('#project-date').val(''); 
+            $('#project-title').val(''); 
+            $('#project-info').val(''); 
+            $('#project-image').val(''); 
+            $('.modal').modal('close');
+         
+      
+            console.log(response);
+      
+        });
+      })
+  }
+  // debugger;
+
+  console.log('Cheers!!!');
+ 
   // console.log('Cheers!!!!');
 
 };
