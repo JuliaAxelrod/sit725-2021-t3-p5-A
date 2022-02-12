@@ -20,6 +20,10 @@ and hence nothing was happening. This is also why postman kept on "posting", but
 
 Now I installed mongoDB and will write the projects to the DB.
 
+Created mongoDB entries with file stored in the collection entries.
+If image file is too big, error message is "Payload is too big"
+Suspect limit is ~50Kb.
+
 Hello from Julia.
 
 This is Prac 3 where I added date to the list of projects and
