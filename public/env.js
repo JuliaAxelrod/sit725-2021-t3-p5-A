@@ -12,8 +12,8 @@ socket.on('number', (msg) => {
 })
 
 function projectCard(project) {
-  return `    <div class="col s6 m4 l3">
-  <div class="card">
+  return `    <div class="col s6 m4 l3 "  id="project-id-${project.projectID}" >
+  <div class="card"> 
     <div class="card-image">
       <img src="${project.img ? project.img : 'assets/Iceberg_7292.jpg'}">
       <span class="card-title">${project.title} ${project.projectDate}</span>
@@ -22,10 +22,25 @@ function projectCard(project) {
       <p>${project.info}</p>
     </div>
     <div class="card-action">
-      <a href="project.html?pid=${project.projectID}">This is a link</a>
+      
+      <a class="waves-effect waves-light indigo lighten-1 btn href="project.html?pid=${project.projectID}">Open</a>
+      <a class="waves-effect waves-light cyan lighten-1 btn" onClick="deleteProject(${project.projectID})"><i class="material-icons right">delete</i></a>
     </div>
   </div>
 </div>`
+}
+      
+
+function deleteProject(id) {
+var settings = {
+  "url": `/api/projects/${id}`,
+  "method": "DELETE",
+  "timeout": 0,
+};
+
+$.ajax(settings).done(function (response) {
+  $(`#project-id-${id}`).remove(); 
+});
 }
 
 function getBase64(file) {
@@ -51,7 +66,7 @@ function createProject(){
         };
       
         var settings = {
-          "url": "/project",
+          "url": "/api/projects",
           "method": "POST",
           "timeout": 0,
           "headers": {
@@ -62,7 +77,7 @@ function createProject(){
 
         console.log(settings);
         $.ajax(settings).done(function (response) {
-            debugger;
+            // debugger;
           console.log('Cheers!!');
             $('#projects-list').append(projectCard(project));
       
@@ -109,7 +124,7 @@ $(document).ready(function(){
   //   console.log(result)
   // })
 
-  $.get('/projects', (result) => {
+  $.get('/api/projects', (result) => {
     for (let p of result) {
     $('#projects-list').append(projectCard(p))
     }
