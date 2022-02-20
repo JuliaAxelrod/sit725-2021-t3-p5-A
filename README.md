@@ -1,3 +1,5 @@
+20/02/22 - css to fix card and image display
+
 Repeat of prac 05, routes - API - services.
 Added project delete.
 

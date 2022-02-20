@@ -45,3 +45,53 @@ main {
 #project-image {
   font: cyan-text text-lighten-3;
 }
+
+.card {
+  width: auto;
+  height: 320px;
+
+  padding: 10px;
+}
+
+img {
+  height: 150px;
+  width: auto;
+  aspect-ratio: attr(width) / attr(height);
+  padding: 10px;
+}
+
+.card-content {
+  width: auto;
+  /* height: 50px; */
+
+  padding: 10px;
+}
+
+/* .flexbox {
+  display: flex;
+  overflow: hidden;
+}
+.flexbox .col {
+  flex: 1;
+  background: red;
+  margin: 10px;
+  padding: 20px;
+} */
+
+.card-title {
+  font-weight: 900;
+  padding: 30px;
+}
+
+.card-content {
+  width: 1000;
+  white-space: nowrap;
+  flex-wrap: wrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: flex;
+  padding: 10px;
+  max-lines: 1;
+  line-clamp: 5;
+  line-break: strict;
+}

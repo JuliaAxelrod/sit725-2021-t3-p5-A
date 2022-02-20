@@ -13,16 +13,18 @@ socket.on('number', (msg) => {
 
 function projectCard(project) {
   return `    <div class="col s6 m4 l3 "  id="project-id-${project.projectID}" >
-  <div class="card"> 
+  <div class="card medium"> 
     <div class="card-image">
-      <img src="${project.img ? project.img : 'assets/Iceberg_7292.jpg'}">
-      <span class="card-title">${project.title} ${project.projectDate}</span>
+      <img alt="&#128021;" src="${project.img ? project.img : 'assets/Iceberg_7292.jpg'}">
     </div>
+    <div>
+      <span class="card-title" style="font-weight:bold">${project.title} ${project.projectDate}</span>
+    </div>
+  
     <div class="card-content">
       <p>${project.info}</p>
     </div>
     <div class="card-action">
-      
       <a class="waves-effect waves-light indigo lighten-1 btn href="project.html?pid=${project.projectID}">Open</a>
       <a class="waves-effect waves-light cyan lighten-1 btn" onClick="deleteProject(${project.projectID})"><i class="material-icons right">delete</i></a>
     </div>
